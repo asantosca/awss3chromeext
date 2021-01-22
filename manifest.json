@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+   
+    "name": "Links s3 addresses as URLs",
+    "version": "1.0",
+    "description": "Changes the text on the page that describes the S3 address into a clickable link",
+   
+    "content_scripts": [{
+      "js": ["content.js"],
+      "matches": ["http://*/*","https://*/*"]
+    }]
+   
+  }
