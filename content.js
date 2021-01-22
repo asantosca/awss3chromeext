@@ -15,7 +15,7 @@ for (var i = 0; i < elements.length; i++) {
             var match = text.match(/(((s3\:\/\/))(\S+))/gi);
             if (Boolean(match)) {
                 while(match.length) {
-                    // add the arrays that mactch "s3://*" to the final array
+                    // add the arrays that match "s3://*" to the final array
                     s3s.push(match.shift());
                 } 
             }
