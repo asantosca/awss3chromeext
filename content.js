@@ -15,7 +15,7 @@ for (var i = 0; i < elements.length; i++) {
             var match = text.match(/(((s3\:\/\/))(\S+))/gi);
             if (Boolean(match)) {
                 while(match.length) {
-                    // add the s3:// found here to the final loop
+                    // add the arrays that mactch "s3://*" to the final array
                     s3s.push(match.shift());
                 } 
             }
@@ -23,10 +23,9 @@ for (var i = 0; i < elements.length; i++) {
     }
 }
 
-console.log("here");
-
 // replace in the body of the document
 if (Boolean(s3s)) {
+
     // for each of these parts that match s3://*
     for (var k = 0; k < s3s.length; k ++) {
 
@@ -34,6 +33,7 @@ if (Boolean(s3s)) {
         var strNoS3 = s3s[k].replace('s3://','');
         var repl = pre + strNoS3 + post + s3s[k] + "</a>";
 
+        // add the to the document as a link
         document.body.innerHTML = document.body.innerHTML.replace(s3s[k], repl);
     }
 }
